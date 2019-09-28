@@ -25,4 +25,22 @@ public class Node {
         cursor.next = n;
     }
 
+    public void printList()
+    {
+
+        Node cursor = this;
+        while(cursor != null)
+        {
+            if(cursor.next == null)
+            {
+                System.out.print(cursor.num);
+            }
+            else
+            {
+                System.out.print(cursor.num + ", ");
+            }
+            cursor = cursor.next;
+        }
+    }
+
 }

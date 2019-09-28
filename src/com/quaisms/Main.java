@@ -9,18 +9,7 @@ public class Main {
         linkedList.append(2);
         linkedList.append(3);
 
-        Node cursor = linkedList;
-        while(cursor != null)
-        {
-            if(cursor.next == null)
-            {
-                System.out.print(cursor.num);
-            }
-            else
-            {
-                System.out.print(cursor.num + ", ");
-            }
-            cursor = cursor.next;
-        }
+        linkedList.printList();
+
     }
 }
