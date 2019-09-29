@@ -88,16 +88,50 @@ public class BinSearchTree {
     private void printInOrderRec(Node temp)
     {
         Node tempNode = temp;
+        if(tempNode == null)
+        {
+            return;
+        }
+        printInOrderRec(tempNode.left);
+        System.out.print(tempNode.num + ", ");
+        printInOrderRec(tempNode.right);
+    }
 
+
+    public void printPreOrder()
+    {
+        printPreOrderRec(root);
+    }
+
+    private void printPreOrderRec(Node temp)
+    {
+        Node tempNode = temp;
         if(tempNode == null)
         {
             return;
         }
 
-        printInOrderRec(tempNode.left);
         System.out.print(tempNode.num + ", ");
-        printInOrderRec(tempNode.right);
-
+        printPreOrderRec(tempNode.left);
+        printPreOrderRec(tempNode.right);
     }
 
+
+
+    public void printPostOrder()
+    {
+        printPostOrderRec(root);
+    }
+
+    private void printPostOrderRec(Node temp)
+    {
+        Node tempNode = temp;
+        if(tempNode == null)
+        {
+            return;
+        }
+        printPostOrderRec(tempNode.left);
+        printPostOrderRec(tempNode.right);
+        System.out.print(tempNode.num + ", ");
+    }
 }

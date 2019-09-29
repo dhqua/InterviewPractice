@@ -23,8 +23,15 @@ public class Main {
         binTree.insert(1);
 
         System.out.println("\nBinary Search Tree Traversals\n-----------------------");
+        System.out.print("In Order: ");
         binTree.printInOrder();
 
+
+        System.out.print("\nPre Order: ");
+        binTree.printPreOrder();
+
+        System.out.print("\nPost Order: ");
+        binTree.printPostOrder();
 
 
     }
