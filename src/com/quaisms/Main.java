@@ -84,5 +84,11 @@ public class Main {
         System.out.print("\nAfter size increase: ");
         vect.printVec();
 
+        int[] test = SearchSortLib.generateArray(16);
+        System.out.println();
+        for(int w : test)
+        {
+            System.out.print(w + ", ");
+        }
     }
 }
