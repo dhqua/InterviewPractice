@@ -69,5 +69,20 @@ public class Main {
             System.out.print(q.dequeue() + ", ");
 
         }
+
+
+        System.out.println("\n\nVector Test\n----------------");
+        Vector vect = new Vector();
+        vect.append(1);
+        vect.append(2);
+        vect.append(3);
+        vect.append(4);
+        vect.insert(11,11);
+        System.out.print("Before size increase: ");
+        vect.printVec();
+        vect.insert(30,30);
+        System.out.print("\nAfter size increase: ");
+        vect.printVec();
+
     }
 }
