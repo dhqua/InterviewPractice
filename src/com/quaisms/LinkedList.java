@@ -4,6 +4,11 @@ public class LinkedList {
 
     Node head;
 
+    public LinkedList()
+    {
+        head = null;
+    }
+
     public void push(int data)
     {
         Node newNode = new Node(data);
