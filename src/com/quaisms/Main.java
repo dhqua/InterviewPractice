@@ -2,7 +2,7 @@ package com.quaisms;
 
 public class Main {
 
-    public static void main(String[] args) {
+    public static void main(String[] args) throws Exception {
 	// write your code here
         LinkedList linkedList = new LinkedList();
         linkedList.push(1);
@@ -38,6 +38,20 @@ public class Main {
         System.out.print("\nAfter deleting: ");
         binTree.printInOrder();
 
+        Stack stack = new Stack();
+        stack.push(1);
+        stack.push(2);
+        stack.push(3);
+        stack.push(4);
+        stack.push(5);
 
+       System.out.println("Stack Tests\n-----------------") ;
+       System.out.print("Top: " + stack.top());
+       System.out.print("\nPopping Entire Stack: ");
+        while(!stack.isEmpty())
+        {
+            System.out.print(stack.pop() + ", ");
+
+        }
     }
 }
