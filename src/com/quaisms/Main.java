@@ -34,5 +34,10 @@ public class Main {
         binTree.printPostOrder();
 
 
+        binTree.deleteNode(2);
+        System.out.print("\nAfter deleting: ");
+        binTree.printInOrder();
+
+
     }
 }

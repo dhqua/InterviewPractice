@@ -80,6 +80,57 @@ public class BinSearchTree {
         return null;
     }
 
+    public void deleteNode(int data)
+    {
+        deleteNodeRec(root, data);
+    }
+
+    private Node deleteNodeRec(Node tempRoot, int data)
+    {
+        if(tempRoot == null)
+            return tempRoot;
+
+        if(data < tempRoot.num)
+        {
+            tempRoot.left = deleteNodeRec(tempRoot.left, data);
+        }
+        else if(data > tempRoot.num)
+        {
+            tempRoot.right = deleteNodeRec(tempRoot.right, data);
+        }
+        else
+        {
+            // Case 1 - no children
+            if(tempRoot.left == null)
+            {
+                return null;
+            }else if (tempRoot.right == null) // One child
+            {
+               return tempRoot.left;
+            }
+
+            //Case 2 kids = replace the current node with the min value of the right subtree
+            tempRoot.num = minSubTree(tempRoot.right);
+
+            tempRoot.right = deleteNodeRec(tempRoot.right, tempRoot.num);
+        }
+
+        return tempRoot;
+    }
+
+    private int minSubTree(Node tempRoot)
+    {
+        int min = tempRoot.num;
+        Node cursor = tempRoot;
+        while(cursor.left != null)
+        {
+            min = cursor.num;
+            cursor = cursor.left;
+        }
+
+        return min;
+    }
+
     public void printInOrder()
     {
         printInOrderRec(root);
