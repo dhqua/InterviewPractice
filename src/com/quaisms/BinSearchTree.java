@@ -25,25 +25,33 @@ public class BinSearchTree {
 
     public void insert(int data)
     {
+        if(root == null)
+        {
+            root = new Node(data);
+            return;
+        }
+
         insertRec(root,data);
     }
 
-    private void insertRec(Node rootNode, int data)
+    private Node insertRec(Node rootNode, int data)
     {
         if(rootNode == null)
         {
             rootNode = new Node(data);
-            return;
+            return rootNode;
         }
 
-        if(data <= rootNode.num )
+        if(data < rootNode.num )
         {
-            insertRec(rootNode.left, data);
+            rootNode.left = insertRec(rootNode.left, data);
         }
-        if(data >= rootNode.num)
+        if(data > rootNode.num)
         {
-            insertRec(rootNode.right, data);
+            rootNode.right = insertRec(rootNode.right, data);
         }
+
+        return rootNode;
 
     }
 
@@ -70,6 +78,26 @@ public class BinSearchTree {
         }
 
         return null;
+    }
+
+    public void printInOrder()
+    {
+        printInOrderRec(root);
+    }
+
+    private void printInOrderRec(Node temp)
+    {
+        Node tempNode = temp;
+
+        if(tempNode == null)
+        {
+            return;
+        }
+
+        printInOrderRec(tempNode.left);
+        System.out.print(tempNode.num + ", ");
+        printInOrderRec(tempNode.right);
+
     }
 
 }

@@ -10,7 +10,22 @@ public class Main {
         linkedList.push(3);
         linkedList.append(0);
 
+        System.out.print("Linked List: ");
         linkedList.printList();
+
+
+        BinSearchTree binTree = new BinSearchTree();
+        binTree.insert(7);
+        binTree.insert(2);
+        binTree.insert(9);
+        binTree.insert(3);
+        binTree.insert(8);
+        binTree.insert(1);
+
+        System.out.println("\nBinary Search Tree Traversals\n-----------------------");
+        binTree.printInOrder();
+
+
 
     }
 }
